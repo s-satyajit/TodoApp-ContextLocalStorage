@@ -23,14 +23,14 @@ function App() {
   }
 
   useEffect(() => {
-    const todo = JSON.parse(localStorage.getItem('todos'))
+    const savedTodos = JSON.parse(localStorage.getItem('savedTodos'))
 
-    if(todo && todos.length > 0)
-      setTodos(todo)
+    if(savedTodos && savedTodos.length > 0)
+      setTodos(savedTodos)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos))
+    localStorage.setItem('savedTodos', JSON.stringify(todos))
   }, [todos])
   
   return (
