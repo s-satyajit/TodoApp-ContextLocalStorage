@@ -1,6 +1,6 @@
-import { TodoContextProvider } from "./contexts"
 import { useState } from "react"
 import { TodoForm, TodoItem } from "./components"
+import { TodoContextProvider } from "./contexts"
 
 function App() {
   
@@ -29,7 +29,7 @@ function App() {
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
             <div className="mb-4">
               {/* Todo form goes here */} 
-              <TodoItem />
+              <TodoForm />
             </div>
             <div className="flex flex-wrap gap-y-3">
               {/*Loop and Add TodoItem here */}
@@ -38,7 +38,7 @@ function App() {
                 key={todo.id}
                 className="w-full"
                 >
-                  <TodoForm />
+                  <TodoItem todo={todo} />
                 </div>
               ))}
             </div>
